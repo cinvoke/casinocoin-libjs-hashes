@@ -109,8 +109,8 @@ function computeTrustlineHash(address1, address2, currency) {
         currencyToHex(currency));
 }
 
-function computeTransactionTreeHash(transactions) {
-    var shamap = new SHAMap();
+function computeTransactionTreeHash(transactions, version) {
+    var shamap = new SHAMap(version);
 
     transactions.forEach(function(txJSON) {
         var txBlobHex = binary.encode(txJSON);
@@ -123,8 +123,8 @@ function computeTransactionTreeHash(transactions) {
     return shamap.hash();
 }
 
-function computeStateTreeHash(entries) {
-    var shamap = new SHAMap();
+function computeStateTreeHash(entries, version){
+    var shamap = new SHAMap(version);
 
     entries.forEach(function(ledgerEntry) {
         var data = binary.encode(ledgerEntry);

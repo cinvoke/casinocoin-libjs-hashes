@@ -1,6 +1,6 @@
 {
     "name": "casinocoin-libjs-hashes",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Compute hashes of Casinocoin objects",
     "license": "ISC",
     "scripts": {
